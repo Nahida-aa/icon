@@ -13,6 +13,9 @@
     },
     "packages/build-icons": {
       "name": "@xaa/build-icons",
+      "bin": {
+        "build-icons": "./cli.ts",
+      },
       "dependencies": {
         "prettier": "^3.8.3",
         "svgson": "^5.3.1",
@@ -25,13 +28,11 @@
     },
     "packages/icon-react": {
       "name": "@xaa/icon-react",
-      "dependencies": {
-        "@xaa/build-icons": "workspace:*",
-        "react": "catalog:",
-      },
       "devDependencies": {
         "@types/react": "catalog:",
         "@typescript/native-preview": "catalog:",
+        "@xaa/build-icons": "workspace:*",
+        "react": "catalog:",
         "typescript": "catalog:",
       },
     },

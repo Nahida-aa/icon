@@ -3,13 +3,11 @@
   "main": "./src/index.ts",
   "scripts": {
     "typecheck": "tsgo --noEmit",
-    "build:icons": "bun --cwd ../build-icons cli.ts --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --withDynamicImports --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts"
-  },
-  "dependencies": {
-    "@xaa/build-icons": "workspace:*",
-    "react": "catalog:"
+    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --withDynamicImports --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts"
   },
   "devDependencies": {
+    "@xaa/build-icons": "workspace:*",
+    "react": "catalog:",
     "@types/react": "catalog:",
     "typescript": "catalog:",
     "@typescript/native-preview": "catalog:"

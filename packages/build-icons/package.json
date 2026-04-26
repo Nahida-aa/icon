@@ -10,6 +10,9 @@
     "typecheck": "tsgo --noEmit",
     "start": "bun ./cli.ts"
   },
+  "bin": {
+    "build-icons": "./cli.ts"
+  },
   "dependencies": {
     "prettier": "^3.8.3",
     "svgson": "^5.3.1"
