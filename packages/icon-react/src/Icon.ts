@@ -19,17 +19,16 @@ const htmlPropsToReactProps = (
 	width: htmlProps?.width ?? defaultAttributes.width,
 	height: htmlProps?.height ?? defaultAttributes.height,
 	viewBox: htmlProps?.viewBox ?? defaultAttributes.viewBox,
-	fill: htmlProps?.fill ?? defaultAttributes.fill,
-	stroke: htmlProps?.stroke ?? defaultAttributes.stroke,
+	fill: htmlProps?.fill,
+	stroke: htmlProps?.stroke,
 	strokeWidth: htmlProps?.['stroke-width']
 		? Number(htmlProps?.['stroke-width'])
-		: defaultAttributes.strokeWidth,
+		: undefined,
 	strokeLinecap:
 		(htmlProps?.['stroke-linecap'] as XaaIconDefaultProps['strokeLinecap']) ??
 		defaultAttributes.strokeLinecap,
 	strokeLinejoin:
-		(htmlProps?.['stroke-linejoin'] as XaaIconDefaultProps['strokeLinejoin']) ??
-		defaultAttributes.strokeLinejoin,
+		(htmlProps?.['stroke-linejoin'] as XaaIconDefaultProps['strokeLinejoin']),
 });
 
 /**
@@ -64,7 +63,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 	) => {
 		const {
 			size: contextSize = 24,
-			strokeWidth: contextStrokeWidth = 2,
+			strokeWidth: contextStrokeWidth,
 			absoluteStrokeWidth: contextAbsoluteStrokeWidth = false,
 			color: contextColor,
 			className: contextClass = '',
@@ -84,7 +83,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 				width: size ?? contextSize ?? defaults.width,
 				height: size ?? contextSize ?? defaults.height,
 				stroke: color ?? contextColor ?? defaults.stroke,
-				strokeWidth: calculatedStrokeWidth,
+				strokeWidth: calculatedStrokeWidth ?? defaults.strokeWidth,
 				className: mergeClasses('lucide', contextClass, className),
 				...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
 				...rest,
