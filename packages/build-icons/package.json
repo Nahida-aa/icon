@@ -2,7 +2,9 @@
   "name": "@xaa/build-icons",
   "type": "module",
   "exports": {
-    "./cli": "./cli.ts"
+    ".": "./index.ts",
+    "./cli": "./cli.ts",
+    "./utils/*": "./utils/*.ts"
   },
   "scripts": {
     "typecheck": "tsgo --noEmit",

@@ -1,6 +1,6 @@
 'use client';
 
-import { hasA11yProp, mergeClasses } from '@xaa/build-icons/utils';
+import { hasA11yProp, mergeClasses } from '@xaa/build-icons';
 import { createElement, forwardRef } from 'react';
 import { useLucideContext } from './context';
 import defaultAttributes from './defaultAttributes';
