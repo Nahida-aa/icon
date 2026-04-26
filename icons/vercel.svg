@@ -7,8 +7,8 @@
 	stroke-linejoin="round"
 >
 	<path
-		fillRule="evenodd"
-				clipRule="evenodd"
+	fill-rule="evenodd"
+			clip-rule="evenodd"
 				d="M8 1L16 15H0L8 1Z"
 				fill="currentColor"
 	/>
