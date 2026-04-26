@@ -48,7 +48,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			className: contextClass = '',
 		} = useXaaContext() ?? {};
 
-const calculatedStrokeWidth =
+		const calculatedStrokeWidth =
       absoluteStrokeWidth ?? contextAbsoluteStrokeWidth
         ? (Number(strokeWidth ?? contextStrokeWidth) * 24) / Number(size ?? contextSize)
         : strokeWidth ?? contextStrokeWidth;
