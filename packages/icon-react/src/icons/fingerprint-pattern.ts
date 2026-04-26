@@ -1,5 +1,5 @@
 import createXaaIcon from '../createXaaIcon';
-import { IconNode } from '../types';
+import type { IconNode } from '../types';
 
 export const __iconNode: IconNode = [
   ['path', { d: 'M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4', key: '1nerag' }],

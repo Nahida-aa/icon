@@ -44,7 +44,8 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			size: contextSize = 24,
 			strokeWidth: contextStrokeWidth = 2,
 			absoluteStrokeWidth: contextAbsoluteStrokeWidth = false,
-			color: contextColor = 'currentColor',
+			// color: contextColor = 'currentColor',
+			color: contextColor,
 			className: contextClass = '',
 		} = useXaaContext() ?? {};
 
@@ -58,7 +59,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			'svg',
 			{
 				ref,
-				...defaultAttributes,
+				// ...defaultAttributes,
 				width: size ?? contextSize ?? defaultAttributes.width,
 				height: size ?? contextSize ?? defaultAttributes.height,
 				stroke: color ?? contextColor,

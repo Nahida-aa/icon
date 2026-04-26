@@ -2,7 +2,6 @@ import createXaaIcon from '../createXaaIcon';
 import type { IconNode } from '../types';
 
 export const __iconNode: IconNode = [
-  ['path', { stroke: 'none', d: 'M0 0h24v24H0z', fill: 'none', key: 'mrmzjk' }],
   [
     'path',
     {
@@ -16,7 +15,7 @@ export const __iconNode: IconNode = [
  * @component @name LayoutBottomBarFilled
  * @description Xaa SVG icon component, renders SVG Element with children.
  *
- * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjMDAwMDAwIiA+PHBhdGggc3Ryb2tlPSJub25lIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIiAvPjxwYXRoIGQ9Ik0xOCAzYTMgMyAwIDAgMSAyLjk5NSAyLjgyNGwuMDA1IC4xNzZ2MTJhMyAzIDAgMCAxIC0yLjgyNCAyLjk5NWwtLjE3NiAuMDA1aC0xMmEzIDMgMCAwIDEgLTIuOTk1IC0yLjgyNGwtLjAwNSAtLjE3NnYtMTJhMyAzIDAgMCAxIDIuODI0IC0yLjk5NWwuMTc2IC0uMDA1aDEyem0wIDJoLTEyYTEgMSAwIDAgMCAtLjk5MyAuODgzbC0uMDA3IC4xMTd2OWgxNHYtOWExIDEgMCAwIDAgLS44ODMgLS45OTNsLS4xMTcgLS4wMDd6IiAvPjwvc3ZnPg==) - https://Nahida.dev/icons/layout-bottom-bar-filled
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiIHN0cm9rZT0ibm9uZSIgPjxwYXRoIGQ9Ik0xOCAzYTMgMyAwIDAgMSAyLjk5NSAyLjgyNGwuMDA1IC4xNzZ2MTJhMyAzIDAgMCAxIC0yLjgyNCAyLjk5NWwtLjE3NiAuMDA1aC0xMmEzIDMgMCAwIDEgLTIuOTk1IC0yLjgyNGwtLjAwNSAtLjE3NnYtMTJhMyAzIDAgMCAxIDIuODI0IC0yLjk5NWwuMTc2IC0uMDA1aDEyem0wIDJoLTEyYTEgMSAwIDAgMCAtLjk5MyAuODgzbC0uMDA3IC4xMTd2OWgxNHYtOWExIDEgMCAwIDAgLS44ODMgLS45OTNsLS4xMTcgLS4wMDd6IiAvPjwvc3ZnPg==) - https://Nahida.dev/icons/layout-bottom-bar-filled
  * @see https://Nahida.dev/guide/react- Documentation
  *
  * @param {Object} props - Xaa icons props and any valid SVG attribute
