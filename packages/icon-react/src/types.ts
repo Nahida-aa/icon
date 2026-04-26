@@ -23,7 +23,20 @@ export type IconNode = [
 export type SVGAttributes = Partial<SVGProps<SVGSVGElement>>;
 type ElementAttributes = RefAttributes<SVGSVGElement> & SVGAttributes;
 
-export type XaaIconDefaultsAttributes = {
+// html属性
+export type XaaIconDefaultHtmlProps = {
+	xmlns?: string;
+	width?: number;
+	height?: number;
+	viewBox?: string;
+	"fill"?: string;
+	"stroke"?: string;
+	"stroke-width"?: string;
+	"stroke-linecap"?: string;
+	"stroke-linejoin"?: string;
+}
+// react 属性
+export type XaaIconDefaultProps = {
 	xmlns?: string;
 	width?: number;
 	height?: number;
@@ -34,7 +47,6 @@ export type XaaIconDefaultsAttributes = {
 	strokeWidth?: number;
 	strokeLinecap?: "butt" | "inherit" | "round" | "square" | undefined;
 	strokeLinejoin?: "bevel" | "inherit" | "miter" | "round" | undefined;
-	absoluteStrokeWidth?: boolean;
 }
 export interface XaaProps extends ElementAttributes {
 	size?: string | number;

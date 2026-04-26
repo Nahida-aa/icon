@@ -1,1 +1,2 @@
 $ tsgo --noEmit
+src/Icon.ts(57,35): error TS2339: Property 'color' does not exist on type 'XaaIconDefaultsAttributes'.
