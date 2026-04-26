@@ -8,9 +8,12 @@ export default defineExportTemplate(async ({
 	getSvg,
 	deprecated,
 	deprecationReason,
+	iconData,
 }) => {
 	const svgContents = await getSvg();
 	const svgBase64 = base64SVG(svgContents);
+	const { defaults } = iconData;
+	const defaultsArg = defaults ? JSON.stringify(defaults) : 'undefined';
 
 	return `
 import createXaaIcon from '../createXaaIcon';
@@ -29,7 +32,7 @@ export const __iconNode: IconNode = ${JSON.stringify(children)}
  * @returns {JSX.Element} JSX Element
  * ${deprecated ? `@deprecated ${deprecationReason}` : ''}
  */
-const ${componentName} = createXaaIcon('${iconName}', __iconNode);
+const ${componentName} = createXaaIcon('${iconName}', __iconNode,${defaultsArg});
 
 export default ${componentName};
 `;

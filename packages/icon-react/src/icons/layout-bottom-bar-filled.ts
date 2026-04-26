@@ -22,6 +22,13 @@ export const __iconNode: IconNode = [
  * @returns {JSX.Element} JSX Element
  *
  */
-const LayoutBottomBarFilled = createXaaIcon('layout-bottom-bar-filled', __iconNode);
+const LayoutBottomBarFilled = createXaaIcon('layout-bottom-bar-filled', __iconNode, {
+  width: 24,
+  height: 24,
+  viewBox: '0 0 24 24',
+  fill: 'currentColor',
+  stroke: 'none',
+  xmlns: 'http://www.w3.org/2000/svg',
+});
 
 export default LayoutBottomBarFilled;

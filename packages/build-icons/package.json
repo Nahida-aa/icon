@@ -6,6 +6,10 @@
       "import": "./index.ts",
       "require": "./index.ts"
     },
+    "./types": {
+      "import": "./types.ts",
+      "require": "./types.ts"
+    },
     "./cli": {
       "import": "./cli.ts",
       "require": "./cli.ts"

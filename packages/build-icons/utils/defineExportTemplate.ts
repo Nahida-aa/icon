@@ -1,5 +1,16 @@
-import type { TemplateFunction } from '../types.ts';
+import type { XaaIconDefaultHtmlProps } from '../types';
 
-const defineExportTemplate = (exportFunction: TemplateFunction) => exportFunction;
+interface ExportTemplateParams {
+  componentName: string;
+  iconName: string;
+  children: any;
+  getSvg: () => Promise<string>;
+  deprecated: boolean;
+  deprecationReason: string;
+  iconData: any;
+  defaults?: XaaIconDefaultHtmlProps;
+}
+
+const defineExportTemplate = (exportFunction: (params: ExportTemplateParams) => Promise<string>) => exportFunction;
 
 export default defineExportTemplate;

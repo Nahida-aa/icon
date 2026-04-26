@@ -2,6 +2,18 @@ import { type INode } from 'svgson';
 
 export type SVGProps = Record<string, string | number>;
 
+export type XaaIconDefaultHtmlProps = {
+	xmlns?: string;
+	width?: number;
+	height?: number;
+	viewBox?: string;
+	"fill"?: string;
+	"stroke"?: string;
+	"stroke-width"?: string;
+	"stroke-linecap"?: string;
+	"stroke-linejoin"?: string;
+}
+
 export type IconNode = [tag: string, attrs: SVGProps][];
 
 export type IconNodeWithChildren = [tag: string, attrs: SVGProps, children: IconNode];
@@ -9,6 +21,7 @@ export type IconNodeWithChildren = [tag: string, attrs: SVGProps, children: Icon
 export type IconData = {
   name: string;
   node: IconNode;
+  defaults?: XaaIconDefaultHtmlProps;
   aliases?: string[];
 } & ({ size: number } | { width: number; height: number });
 
@@ -20,6 +33,7 @@ export interface ExportTemplate {
   deprecated: boolean;
   deprecationReason: string;
   iconData: IconData;
+  defaults?: XaaIconDefaultHtmlProps;
 }
 
 export type TemplateFunction = (params: ExportTemplate) => Promise<string>;

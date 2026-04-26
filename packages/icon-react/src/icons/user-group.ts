@@ -18,6 +18,12 @@ export const __iconNode: IconNode = [
  * @returns {JSX.Element} JSX Element
  *
  */
-const UserGroup = createXaaIcon('user-group', __iconNode);
+const UserGroup = createXaaIcon('user-group', __iconNode, {
+  width: 32,
+  height: 32,
+  viewBox: '0 0 32 32',
+  fill: '#000000',
+  xmlns: 'http://www.w3.org/2000/svg',
+});
 
 export default UserGroup;

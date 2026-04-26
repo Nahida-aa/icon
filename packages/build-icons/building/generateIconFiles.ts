@@ -2,13 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import prettier from 'prettier';
 import deprecationReasonTemplate from '../utils/deprecationReasonTemplate.ts';
-import type { IconMetadata, IconNode, Path, TemplateFunction } from '../types.ts';
+import type { IconMetadata, IconNode, Path, TemplateFunction, XaaIconDefaultHtmlProps } from '../types.ts';
 import { type INode } from 'svgson';
 import { toPascalCase } from '../utils/toPascalCase.ts';
 import { readSvg } from '../helpers/readSvg.ts';
 
 interface GenerateIconFiles {
   iconNodes: Record<string, INode>;
+  iconDefaults: Record<string, XaaIconDefaultHtmlProps | undefined>;
   outputDirectory: Path;
   template: TemplateFunction;
   showLog?: boolean;
@@ -22,6 +23,7 @@ interface GenerateIconFiles {
 
 export default  function generateIconFiles({
   iconNodes,
+  iconDefaults,
   outputDirectory,
   template,
   showLog = true,
@@ -66,6 +68,7 @@ export default  function generateIconFiles({
       name: iconName,
       size: 24,
       node: children,
+      defaults: iconDefaults[iconName],
       ...((aliases?.length ?? 0) > 0 && {
         aliases: aliases.map((alias) => (typeof alias === 'string' ? alias : alias.name)),
       }),

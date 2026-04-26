@@ -4,17 +4,13 @@
 // 	toPascalCase,
 // } from '@xaa/build-icons/';
 
+import type { XaaIconDefaultHtmlProps } from '@xaa/build-icons/types';
 import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
 import { toKebabCase } from '@xaa/build-icons/utils/toKebabCase';
 import { toPascalCase } from '@xaa/build-icons/utils/toPascalCase';
 import { createElement, forwardRef } from 'react';
 import Icon from './Icon';
-import type {
-	IconNode,
-	XaaIconDefaultHtmlProps,
-	XaaIconDefaultProps,
-	XaaProps,
-} from './types';
+import type { IconNode, XaaIconDefaultProps, XaaProps } from './types';
 
 const htmlPropsToReactProps = (
 	htmlProps?: XaaIconDefaultHtmlProps,
@@ -25,7 +21,7 @@ const htmlPropsToReactProps = (
 	viewBox: htmlProps?.viewBox,
 	fill: htmlProps?.fill,
 	stroke: htmlProps?.stroke,
-	strokeWidth: Number(htmlProps?.['stroke-width']),
+	strokeWidth:  htmlProps?.['stroke-width'] ? Number(htmlProps?.['stroke-width']) : undefined,
 	strokeLinecap: htmlProps?.[
 		'stroke-linecap'
 	] as XaaIconDefaultProps['strokeLinecap'],
