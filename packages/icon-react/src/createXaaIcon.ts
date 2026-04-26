@@ -9,20 +9,26 @@ import { toKebabCase } from '@xaa/build-icons/utils/toKebabCase';
 import { toPascalCase } from '@xaa/build-icons/utils/toPascalCase';
 import { createElement, forwardRef } from 'react';
 import Icon from './Icon';
-import type { IconNode, XaaProps } from './types';
+import type { IconNode, XaaIconDefaultsAttributes, XaaProps } from './types';
 
 /**
  * Create a Xaa icon component
  * @param {string} iconName
  * @param {array} iconNode
+ * @param {object} iconDefaults - optional default values for this icon
  * @returns {ForwardRefExoticComponent} XaaIcon
  */
-const createXaaIcon = (iconName: string, iconNode: IconNode) => {
+const createXaaIcon = (
+	iconName: string,
+	iconNode: IconNode,
+	iconDefaults?: XaaIconDefaultsAttributes,
+) => {
 	const Component = forwardRef<SVGSVGElement, XaaProps>(
 		({ className, ...props }, ref) =>
 			createElement(Icon, {
 				ref,
 				iconNode,
+				...iconDefaults,
 				className: mergeClasses(
 					`xaa-${toKebabCase(toPascalCase(iconName))}`,
 					`xaa-${iconName}`,

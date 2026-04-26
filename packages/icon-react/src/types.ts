@@ -23,6 +23,19 @@ export type IconNode = [
 export type SVGAttributes = Partial<SVGProps<SVGSVGElement>>;
 type ElementAttributes = RefAttributes<SVGSVGElement> & SVGAttributes;
 
+export type XaaIconDefaultsAttributes = {
+	xmlns?: string;
+	width?: number;
+	height?: number;
+	size?: number;
+	viewBox?: string;
+	fill?: string;
+	stroke?: string;
+	strokeWidth?: number;
+	strokeLinecap?: "butt" | "inherit" | "round" | "square" | undefined;
+	strokeLinejoin?: "bevel" | "inherit" | "miter" | "round" | undefined;
+	absoluteStrokeWidth?: boolean;
+}
 export interface XaaProps extends ElementAttributes {
 	size?: string | number;
 	absoluteStrokeWidth?: boolean;

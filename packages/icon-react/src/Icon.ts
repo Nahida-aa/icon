@@ -5,10 +5,11 @@ import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
 import { createElement, forwardRef } from 'react';
 import { useXaaContext } from './context';
 import defaultAttributes from './defaultAttributes';
-import type { IconNode, XaaProps } from './types';
+import type { IconNode, XaaProps, XaaIconDefaults } from './types';
 
 interface IconComponentProps extends XaaProps {
 	iconNode: IconNode;
+	iconDefaults?: XaaIconDefaults;
 }
 
 /**
@@ -36,6 +37,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			className = '',
 			children,
 			iconNode,
+			iconDefaults,
 			...rest
 		},
 		ref,
@@ -44,25 +46,29 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			size: contextSize = 24,
 			strokeWidth: contextStrokeWidth = 2,
 			absoluteStrokeWidth: contextAbsoluteStrokeWidth = false,
-			// color: contextColor = 'currentColor',
 			color: contextColor,
 			className: contextClass = '',
 		} = useXaaContext() ?? {};
 
+		// 图标自身默认值作为第三优先级
+		const iconSize = iconDefaults?.size;
+		const iconStrokeWidth = iconDefaults?.strokeWidth;
+		const iconAbsoluteStrokeWidth = iconDefaults?.absoluteStrokeWidth;
+		const iconColor = iconDefaults?.color;
+
 		const calculatedStrokeWidth =
-			(absoluteStrokeWidth ?? contextAbsoluteStrokeWidth)
-				? (Number(strokeWidth ?? contextStrokeWidth) * 24) /
-					Number(size ?? contextSize)
-				: (strokeWidth ?? contextStrokeWidth);
+			(absoluteStrokeWidth ?? contextAbsoluteStrokeWidth ?? iconAbsoluteStrokeWidth)
+				? (Number(strokeWidth ?? contextStrokeWidth ?? iconStrokeWidth) * 24) /
+					Number(size ?? contextSize ?? iconSize)
+				: (strokeWidth ?? contextStrokeWidth ?? iconStrokeWidth);
 
 		return createElement(
 			'svg',
 			{
 				ref,
-				// ...defaultAttributes,
-				width: size ?? contextSize ?? defaultAttributes.width,
-				height: size ?? contextSize ?? defaultAttributes.height,
-				stroke: color ?? contextColor,
+				width: size ?? contextSize ?? iconSize ?? defaultAttributes.width,
+				height: size ?? contextSize ?? iconSize ?? defaultAttributes.height,
+				stroke: color ?? contextColor ?? iconColor,
 				strokeWidth: calculatedStrokeWidth,
 				className: mergeClasses('xaa', contextClass, className),
 				...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
