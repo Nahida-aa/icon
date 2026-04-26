@@ -6,10 +6,11 @@
     "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --withDynamicImports --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts"
   },
   "devDependencies": {
+    "@types/react": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "@xaa/build-icons": "workspace:*",
     "react": "catalog:",
-    "@types/react": "catalog:",
     "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "vite": "^8.0.10"
   }
 }

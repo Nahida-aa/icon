@@ -2,9 +2,22 @@
   "name": "@xaa/build-icons",
   "type": "module",
   "exports": {
-    ".": "./index.ts",
-    "./cli": "./cli.ts",
-    "./utils/*": "./utils/*.ts"
+".": {
+      "import": "./index.ts",
+      "require": "./index.ts"
+    },
+    "./cli": {
+      "import": "./cli.ts",
+      "require": "./cli.ts"
+    },
+    "./utils/*": {
+      "import": "./utils/*.ts",
+      "require": "./utils/*.ts"
+    },
+    "./helpers/*": {
+      "import": "./helpers/*.ts",
+      "require": "./helpers/*.ts"
+    }
   },
   "scripts": {
     "typecheck": "tsgo --noEmit",
