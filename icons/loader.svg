@@ -4,6 +4,7 @@
 	height="24"
 	viewBox="0 0 16 16"
 	stroke-linejoin="round"
+	stroke="currentColor"
 >
 		<path d="M8 0V4" stroke-width="1.5" stroke="currentColor"/>
 		<path d="M8 16V12" stroke-width="1.5" stroke="currentColor" opacity="0.5"/>

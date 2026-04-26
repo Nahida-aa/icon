@@ -48,6 +48,7 @@ import {
 	XaaVercel,
 	XaaWakatime,
 } from '@xaa/icon-react';
+import { CheckCircleFillIcon } from '#/components/icons.tsx';
 
 export const Route = createFileRoute('/icons')({
 	component: RouteComponent,
@@ -59,6 +60,12 @@ function RouteComponent() {
 			<h2>Comparison: Left = Original, Right = Xaa</h2>
 			<XaaGithub />
 			<XaaWakatime />
+			<XaaCheckCircleFill />
+			<CheckCircleFillIcon />
+			<XaaCheckedSquare />
+			<XaaSparkles />
+			<XaaSparkles1 />
+			<XaaGoogle />
 		</div>
 	);
 }

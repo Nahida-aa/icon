@@ -4,6 +4,7 @@
 	height="24"
 	viewBox="0 0 16 16"
 	stroke-linejoin="round"
+	stroke="currentColor"
 >
 	<path
 			fill-rule="evenodd"
