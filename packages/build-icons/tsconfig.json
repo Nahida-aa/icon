@@ -8,7 +8,8 @@
     "module": "ESNext",
     "target": "ESNext",
     "esModuleInterop": true,
-    "types": ["node"],
+    "types": ["bun"],
+    "skipLibCheck": true, // 强烈建议开启，跳过库文件的类型检查
     "lib": ["esnext"],
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

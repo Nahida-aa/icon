@@ -2,7 +2,7 @@ import {
 	mergeClasses,
 	toKebabCase,
 	toPascalCase,
-} from '@xaa/build-icons/utils';
+} from '@xaa/build-icons';
 import { createElement, forwardRef } from 'react';
 import Icon from './Icon';
 import type { IconNode, LucideProps } from './types';

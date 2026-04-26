@@ -1,17 +1,20 @@
 {
   "name": "@xaa/build-icons",
   "type": "module",
-  "scripts": {
-    "typecheck": "tsgo --noEmit"
+  "exports": {
+    "./cli": "./cli.ts"
   },
-  "imports": {
-    "#/*": "./src/*"
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "start": "bun ./cli.ts"
   },
   "dependencies": {
+    "prettier": "^3.8.3",
     "svgson": "^5.3.1"
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "@typescript/native-preview": "catalog:"
   }
 }

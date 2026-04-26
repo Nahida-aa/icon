@@ -2,14 +2,16 @@
   "name": "@xaa/icon-react",
   "main": "./src/index.ts",
   "scripts": {
-    "typecheck": "tsgo --noEmit"
+    "typecheck": "tsgo --noEmit",
+    "build:icons": "bun --cwd ../build-icons cli.ts --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --withDynamicImports --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts"
   },
   "dependencies": {
     "@xaa/build-icons": "workspace:*",
-    "react": "^19.0.0"
+    "react": "catalog:"
   },
   "devDependencies": {
-    "@types/react": "^19.2.0",
-    "typescript": "latest"
+    "@types/react": "catalog:",
+    "typescript": "catalog:",
+    "@typescript/native-preview": "catalog:"
   }
 }
