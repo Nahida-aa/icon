@@ -1,3 +1,4 @@
+import { cloudflare } from '@cloudflare/vite-plugin';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import babel from '@rolldown/plugin-babel';
 import tailwindcss from '@tailwindcss/vite';
@@ -16,10 +17,11 @@ const config = defineConfig({
 			outdir: './src/paraglide',
 			strategy: ['url', 'baseLocale'],
 		}),
-		nitro({
-    rollupConfig: { external: [/^@sentry\//] },
-    preset: 'github_pages'
-    }),
+		cloudflare({ viteEnvironment: { name: 'ssr' } }),
+		// nitro({
+		// // rollupConfig: { external: [/^@sentry\//] },
+		// preset: 'github_pages'
+		// }),
 		tailwindcss(),
 		tanstackStart(),
 		react(),
@@ -27,7 +29,6 @@ const config = defineConfig({
 			presets: [reactCompilerPreset()],
 		}),
 	],
-
 });
 
 export default config;

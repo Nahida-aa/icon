@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IconsRouteImport } from './routes/icons'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoI18nRouteImport } from './routes/demo.i18n'
 
 const IconsRoute = IconsRouteImport.update({
   id: '/icons',
@@ -29,44 +28,35 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoI18nRoute = DemoI18nRouteImport.update({
-  id: '/demo/i18n',
-  path: '/demo/i18n',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/icons': typeof IconsRoute
-  '/demo/i18n': typeof DemoI18nRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/icons': typeof IconsRoute
-  '/demo/i18n': typeof DemoI18nRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/icons': typeof IconsRoute
-  '/demo/i18n': typeof DemoI18nRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/icons' | '/demo/i18n'
+  fullPaths: '/' | '/about' | '/icons'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/icons' | '/demo/i18n'
-  id: '__root__' | '/' | '/about' | '/icons' | '/demo/i18n'
+  to: '/' | '/about' | '/icons'
+  id: '__root__' | '/' | '/about' | '/icons'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   IconsRoute: typeof IconsRoute
-  DemoI18nRoute: typeof DemoI18nRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,13 +82,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/i18n': {
-      id: '/demo/i18n'
-      path: '/demo/i18n'
-      fullPath: '/demo/i18n'
-      preLoaderRoute: typeof DemoI18nRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -106,7 +89,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   IconsRoute: IconsRoute,
-  DemoI18nRoute: DemoI18nRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -25,8 +25,8 @@ export const __iconNode: IconNode = ${JSON.stringify(children)}
  * @component @name ${componentName}
  * @description Xaa SVG icon component, renders SVG Element with children.
  *
- * @preview ![img](data:image/svg+xml;base64,${svgBase64}) - https://Nahida.dev/icons/${iconName}
- * @see https://Nahida.dev/guide/react- Documentation
+ * @preview ![img](data:image/svg+xml;base64,${svgBase64}) - https://icon.nahida-aa.workers.dev/icons/${iconName}
+ * @see https://icon.nahida-aa.workers.dev/guide/react- Documentation
  *
  * @param {Object} props - Xaa icons props and any valid SVG attribute
  * @returns {JSX.Element} JSX Element
