@@ -6,7 +6,8 @@ node_modules
 .pnp.js
 
 # Local env files
-!.env*
+.env*
+*.local.*
 # Testing
 coverage
 
@@ -88,3 +89,4 @@ docs/.nitro
 docs/public/og/**
 !docs/public/og/general.png
 .gitignore
+
