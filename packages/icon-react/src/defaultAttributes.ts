@@ -3,10 +3,10 @@ const defaultAttributes = {
 	width: 24,
 	height: 24,
 	viewBox: '0 0 24 24',
-	fill: 'none',
-	stroke: 'currentColor',
+	fill: 'none', // html default is black,
+	stroke: 'currentColor', // 
 	strokeWidth: 2,
 	strokeLinecap: 'round',
 	strokeLinejoin: 'round',
-}
+} as const;
 export default defaultAttributes

@@ -1,15 +1,36 @@
 'use client';
 
+import type { XaaIconDefaultHtmlProps } from '@xaa/build-icons/types';
 import { hasA11yProp } from '@xaa/build-icons/utils/hasA11yProp';
 import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
 import { createElement, forwardRef } from 'react';
 import { useXaaContext } from './context';
 import defaultAttributes from './defaultAttributes';
-import type { IconNode,  XaaProps } from './types';
+import type { IconNode, XaaIconDefaultProps, XaaProps } from './types';
 
 interface IconComponentProps extends XaaProps {
 	iconNode: IconNode;
+	iconDefaults?: XaaIconDefaultHtmlProps;
 }
+const htmlPropsToReactProps = (
+	htmlProps?: XaaIconDefaultHtmlProps,
+): XaaIconDefaultProps => ({
+	xmlns: htmlProps?.xmlns ?? defaultAttributes.xmlns,
+	width: htmlProps?.width ?? defaultAttributes.width,
+	height: htmlProps?.height ?? defaultAttributes.height,
+	viewBox: htmlProps?.viewBox ?? defaultAttributes.viewBox,
+	fill: htmlProps?.fill ?? defaultAttributes.fill,
+	stroke: htmlProps?.stroke ?? defaultAttributes.stroke,
+	strokeWidth: htmlProps?.['stroke-width']
+		? Number(htmlProps?.['stroke-width'])
+		: defaultAttributes.strokeWidth,
+	strokeLinecap:
+		(htmlProps?.['stroke-linecap'] as XaaIconDefaultProps['strokeLinecap']) ??
+		defaultAttributes.strokeLinecap,
+	strokeLinejoin:
+		(htmlProps?.['stroke-linejoin'] as XaaIconDefaultProps['strokeLinejoin']) ??
+		defaultAttributes.strokeLinejoin,
+});
 
 /**
  * Xaa icon component
@@ -36,6 +57,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			className = '',
 			children,
 			iconNode,
+			iconDefaults,
 			...rest
 		},
 		ref,
@@ -49,28 +71,29 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 		} = useXaaContext() ?? {};
 
 		const calculatedStrokeWidth =
-      absoluteStrokeWidth ?? contextAbsoluteStrokeWidth
-        ? (Number(strokeWidth ?? contextStrokeWidth) * 24) / Number(size ?? contextSize)
-        : strokeWidth ?? contextStrokeWidth;
-
-    return createElement(
-      'svg',
-      {
-        ref,
-        ...defaultAttributes,
-        width: size ?? contextSize ?? defaultAttributes.width,
-        height: size ?? contextSize ?? defaultAttributes.height,
-        stroke: color ?? contextColor,
-        strokeWidth: calculatedStrokeWidth,
-        className: mergeClasses('lucide', contextClass, className),
-        ...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
-        ...rest,
-      },
-      [
-        ...iconNode.map(([tag, attrs]) => createElement(tag, attrs)),
-        ...(Array.isArray(children) ? children : [children]),
-      ],
-    );
+			(absoluteStrokeWidth ?? contextAbsoluteStrokeWidth)
+				? (Number(strokeWidth ?? contextStrokeWidth) * 24) /
+					Number(size ?? contextSize)
+				: (strokeWidth ?? contextStrokeWidth);
+		const defaults = htmlPropsToReactProps(iconDefaults);
+		return createElement(
+			'svg',
+			{
+				ref,
+				...defaults,
+				width: size ?? contextSize ?? defaults.width,
+				height: size ?? contextSize ?? defaults.height,
+				stroke: color ?? contextColor ?? defaults.stroke,
+				strokeWidth: calculatedStrokeWidth,
+				className: mergeClasses('lucide', contextClass, className),
+				...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
+				...rest,
+			},
+			[
+				...iconNode.map(([tag, attrs]) => createElement(tag, attrs)),
+				...(Array.isArray(children) ? children : [children]),
+			],
+		);
 	},
 );
 
