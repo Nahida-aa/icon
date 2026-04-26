@@ -1,9 +1,10 @@
+import { IconLayoutBottombarFilled } from '@tabler/icons-react';
 import { createFileRoute } from '@tanstack/react-router';
 import {
 	LayoutBottomBarFilledIcon,
 	LayoutBottomBarIcon,
-} from '@xaa/icon-react/src/aliases/suffixed';
-
+	UserGroupIcon,
+} from '@xaa/icon-react';
 export const Route = createFileRoute('/icons')({
 	component: RouteComponent,
 });
@@ -13,7 +14,9 @@ function RouteComponent() {
 		<div>
 			Hello "/icons"!
 			<LayoutBottomBarFilledIcon />
+			<IconLayoutBottombarFilled />
 			<LayoutBottomBarIcon />
+			<UserGroupIcon />
 		</div>
 	);
 }

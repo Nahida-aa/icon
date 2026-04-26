@@ -90,7 +90,7 @@ export default async function generateAliasesFiles({
           aliasSuffixFileContent += `// ${componentName} aliases\n`;
         }
       }
-
+      // 生成后缀和前缀别名
       if (!aliasNamesOnly) {
         aliasSuffixFileContent += getExportString(
           `${componentName}Icon`,
@@ -103,7 +103,7 @@ export default async function generateAliasesFiles({
           aliasImportFileExtension,
         );
       }
-
+      // Generate aliases
       if (iconAliases != null && Array.isArray(iconAliases)) {
         await Promise.all(
           iconAliases.map(async (alias) => {
@@ -175,6 +175,7 @@ export default async function generateAliasesFiles({
           }),
         );
       }
+
 
       await appendFile(aliasFileContent, aliasFileName, destinationDirectory);
 

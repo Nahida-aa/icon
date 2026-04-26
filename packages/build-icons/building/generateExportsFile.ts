@@ -39,5 +39,5 @@ export default async function generateExportFile(
 
   await appendFile('\n', fileName, outputDirectory);
 
-  console.log(`Successfully generated ${fileName} file`);
+  console.log(`Successfully generated ${outputDirectory}/${fileName} file`);
 }

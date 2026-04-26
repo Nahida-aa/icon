@@ -54,6 +54,6 @@ export default async function generateDynamicImports({
   await appendFile(importString, fileName, outputDirectory);
 
   if (showLog) {
-    console.log(`Successfully generated ${fileName} file`);
+    console.log(`Successfully generated ${outputDirectory}/${fileName} file`);
   }
 }

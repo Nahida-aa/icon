@@ -1,8 +1,12 @@
-import {
-	mergeClasses,
-	toKebabCase,
-	toPascalCase,
-} from '@xaa/build-icons';
+// import {
+// 	mergeClasses,
+// 	toKebabCase,
+// 	toPascalCase,
+// } from '@xaa/build-icons/';
+
+import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
+import { toKebabCase } from '@xaa/build-icons/utils/toKebabCase';
+import { toPascalCase } from '@xaa/build-icons/utils/toPascalCase';
 import { createElement, forwardRef } from 'react';
 import Icon from './Icon';
 import type { IconNode, XaaProps } from './types';

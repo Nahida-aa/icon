@@ -1,6 +1,7 @@
 'use client';
 
-import { hasA11yProp, mergeClasses } from '@xaa/build-icons';
+import { hasA11yProp } from '@xaa/build-icons/utils/hasA11yProp';
+import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
 import { createElement, forwardRef } from 'react';
 import { useXaaContext } from './context';
 import defaultAttributes from './defaultAttributes';

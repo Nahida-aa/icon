@@ -14,7 +14,7 @@ export default defineExportTemplate(async ({
 
 	return `
 import createXaaIcon from '../createXaaIcon';
-import { IconNode } from '../types';
+import type { IconNode } from '../types';
 
 export const __iconNode: IconNode = ${JSON.stringify(children)}
 
