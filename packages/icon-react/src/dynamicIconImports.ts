@@ -51,7 +51,6 @@ const dynamicIconImports = {
   'github': () => import('./icons/github'),
   'sparkles1': () => import('./icons/sparkles1'),
   'sparkles': () => import('./icons/sparkles'),
-  'github1': () => import('./icons/github1'),
   'wakatime': () => import('./icons/wakatime'),
 };
 export default dynamicIconImports;
