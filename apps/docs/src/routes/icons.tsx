@@ -14,6 +14,7 @@ import {
 	XaaFile,
 	XaaFile as XaaFileIcon,
 	XaaGithub,
+	XaaGithub1,
 	XaaGoogle,
 	XaaGps,
 	XaaHome,
@@ -46,13 +47,8 @@ import {
 	XaaUpload,
 	XaaUser,
 	XaaVercel,
+	XaaWakatime,
 } from '@xaa/icon-react';
-import {
-	CheckCirclFillIcon,
-	DeltaIcon,
-	PenIcon,
-	SidebarLeftIcon,
-} from '#/components/icons.tsx';
 
 export const Route = createFileRoute('/icons')({
 	component: RouteComponent,
@@ -62,6 +58,9 @@ function RouteComponent() {
 	return (
 		<div className="flex flex-col gap-4 p-8">
 			<h2>Comparison: Left = Original, Right = Xaa</h2>
+			<XaaGithub1 />
+			<XaaGithub />
+			<XaaWakatime />
 		</div>
 	);
 }
