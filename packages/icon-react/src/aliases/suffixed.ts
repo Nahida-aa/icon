@@ -1,15 +1,15 @@
 // AArrowDown aliases
 export { default as AArrowDownIcon } from '../icons/a-arrow-down';
-// Sparkles aliases
-export { default as SparklesIcon } from '../icons/sparkles';
 // LayoutBottomBarFilled aliases
 export { default as LayoutBottomBarFilledIcon } from '../icons/layout-bottom-bar-filled';
 // Mix aliases
 export { default as MixIcon } from '../icons/mix';
-// DocumentText aliases
-export { default as DocumentTextIcon } from '../icons/document-text';
 // LayoutBottomBar aliases
 export { default as LayoutBottomBarIcon } from '../icons/layout-bottom-bar';
+// DocumentText aliases
+export { default as DocumentTextIcon } from '../icons/document-text';
+// Sparkles aliases
+export { default as SparklesIcon } from '../icons/sparkles';
 // UserGroup aliases
 export { default as UserGroupIcon } from '../icons/user-group';
 // FingerprintPattern aliases

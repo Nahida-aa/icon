@@ -2,14 +2,14 @@
 export { default as XaaAArrowDown } from '../icons/a-arrow-down';
 // LayoutBottomBarFilled aliases
 export { default as XaaLayoutBottomBarFilled } from '../icons/layout-bottom-bar-filled';
-// Sparkles aliases
-export { default as XaaSparkles } from '../icons/sparkles';
 // Mix aliases
 export { default as XaaMix } from '../icons/mix';
-// DocumentText aliases
-export { default as XaaDocumentText } from '../icons/document-text';
 // LayoutBottomBar aliases
 export { default as XaaLayoutBottomBar } from '../icons/layout-bottom-bar';
+// DocumentText aliases
+export { default as XaaDocumentText } from '../icons/document-text';
+// Sparkles aliases
+export { default as XaaSparkles } from '../icons/sparkles';
 // UserGroup aliases
 export { default as XaaUserGroup } from '../icons/user-group';
 // FingerprintPattern aliases
