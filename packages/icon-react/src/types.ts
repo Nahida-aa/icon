@@ -7,13 +7,16 @@ import type { ForwardRefExoticComponent, RefAttributes, SVGProps } from 'react';
  */
 type SVGElementType =
 	| 'circle'
+	| 'clipPath'
+	| 'defs'
 	| 'ellipse'
 	| 'g'
 	| 'line'
 	| 'path'
 	| 'polygon'
 	| 'polyline'
-	| 'rect';
+	| 'rect'
+	| 'symbol';
 
 export type IconNode = [
 	elementName: SVGElementType,
