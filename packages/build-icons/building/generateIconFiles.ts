@@ -20,7 +20,7 @@ interface GenerateIconFiles {
   iconMetaData: Record<string, IconMetadata>;
 }
 
-function generateIconFiles({
+export default  function generateIconFiles({
   iconNodes,
   outputDirectory,
   template,
@@ -53,7 +53,7 @@ function generateIconFiles({
       deprecated = false,
       toBeRemovedInVersion = undefined,
       aliases = [],
-    } = iconMetaData[iconName];
+    } = iconMetaData[iconName] ?? {}
     const deprecationReason = deprecated
       ? deprecationReasonTemplate(iconMetaData[iconName].deprecationReason ?? '', {
           componentName,
@@ -108,9 +108,7 @@ function generateIconFiles({
         console.log('Successfully built', icons.length, 'icons.');
       }
     })
-    .catch((error) => {
-      throw new Error(`Something went wrong generating icon files,\n ${error}`);
-    });
+    // .catch((error) => {
+    //   throw new Error(`Something went wrong generating icon files,\n ${error}`);
+    // });
 }
-
-export default generateIconFiles;

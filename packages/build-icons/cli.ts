@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+console.log('=== CLI STARTED ===');
 import fs from 'fs';
 import path from 'path';
 import { readSvgDirectory } from "./helpers/readSvgDirectory";

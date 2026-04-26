@@ -1,0 +1,31 @@
+import createXaaIcon from '../createXaaIcon';
+import { IconNode } from '../types';
+
+export const __iconNode: IconNode = [
+  ['g', { id: 'SVGRepo_bgCarrier', 'stroke-width': '0', key: '3w09zg' }],
+  [
+    'g',
+    {
+      id: 'SVGRepo_tracerCarrier',
+      'stroke-linecap': 'round',
+      'stroke-linejoin': 'round',
+      key: '1g9u6h',
+    },
+  ],
+  ['g', { id: 'SVGRepo_iconCarrier', key: '12hc3e' }],
+];
+
+/**
+ * @component @name UserGroup
+ * @description Xaa SVG icon component, renders SVG Element with children.
+ *
+ * @preview ![img](data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IlNWR1JlcG9fdHJhY2VyQ2FycmllciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L2c+PGcgaWQ9IlNWR1JlcG9faWNvbkNhcnJpZXIiPiA8dGl0bGU+dXNlci1ncm91cDwvdGl0bGU+IDxwYXRoIGQ9Ik0xMyAxNi42NjhjMS44NzgtMCAzLjU3OS0wLjc1NiA0LjgxNi0xLjk4bC0wLjAwMSAwLjAwMWMwLjk5MSAwLjk1IDIuMzM5IDEuNTM2IDMuODI0IDEuNTM2IDMuMDUzIDAgNS41MjgtMi40NzUgNS41MjgtNS41MjhzLTIuNDc1LTUuNTI4LTUuNTI4LTUuNTI4Yy0xLjA3NyAwLTIuMDgyIDAuMzA4LTIuOTMyIDAuODQxbDAuMDIzLTAuMDEzYy0xLjI0OS0xLjg2Ny0zLjM1LTMuMDgwLTUuNzM0LTMuMDgwLTMuNzk4IDAtNi44NzYgMy4wNzktNi44NzYgNi44NzZzMy4wNzkgNi44NzYgNi44NzYgNi44NzZjMC4wMDEgMCAwLjAwMiAwIDAuMDA0IDBoLTB6TTIxLjYyMSA3LjY2OGMwLjAwOS0wIDAuMDIwLTAgMC4wMzAtMCAxLjY3OCAwIDMuMDM4IDEuMzYgMy4wMzggMy4wMzhzLTEuMzYgMy4wMzgtMy4wMzggMy4wMzhjLTAuOTYzIDAtMS44MjItMC40NDgtMi4zNzgtMS4xNDdsLTAuMDA1LTAuMDA2YzAuMzg2LTAuODIxIDAuNjExLTEuNzg0IDAuNjExLTIuNzk5IDAtMC41MS0wLjA1Ny0xLjAwNy0wLjE2NS0xLjQ4NWwwLjAwOSAwLjA0NWMwLjUxMi0wLjQyMyAxLjE3NS0wLjY4IDEuODk4LTAuNjg0aDAuMDAxek0xMyA1LjQwOWMyLjQxOCAwIDQuMzc5IDEuOTYxIDQuMzc5IDQuMzc5cy0xLjk2MSA0LjM3OS00LjM3OSA0LjM3OS00LjM3OS0xLjk2MS00LjM3OS00LjM3OWMwLTAgMC0wIDAtMC4wMDF2MGMwLjAwMy0yLjQxNyAxLjk2Mi00LjM3NiA0LjM4LTQuMzc5aDB6TTMxLjIyMSAyNC44ODljLTAuOTgzLTQuNDQ1LTQuODkxLTcuNzIxLTkuNTYzLTcuNzIxLTEuNzQ2IDAtMy4zODQgMC40NTctNC44MDMgMS4yNThsMC4wNDktMC4wMjVjLTEuMTYzLTAuNDA5LTIuNTA0LTAuNjQ5LTMuODk5LTAuNjU3aC0wLjAwNGMtNS45NTEgMC4wMjYtMTAuOTI0IDQuMTgtMTIuMjA1IDkuNzQ1bC0wLjAxNiAwLjA4NWMtMC4wMTggMC4wODAtMC4wMjkgMC4xNzMtMC4wMjkgMC4yNjggMCAwLjY5MSAwLjU2IDEuMjUxIDEuMjUxIDEuMjUxIDAuNTk2IDAgMS4wOTQtMC40MTcgMS4yMi0wLjk3NWwwLjAwMi0wLjAwOGMxLjAyMC00LjUzMSA1LjAxMC03Ljg2NSA5Ljc3OS03Ljg2NXM4Ljc1OSAzLjMzNCA5Ljc2NiA3Ljc5OGwwLjAxMyAwLjA2N2MwLjEyNyAwLjU2NiAwLjYyNSAwLjk4MiAxLjIyMSAwLjk4MiAwLjY5IDAgMS4yNS0wLjU1OSAxLjI1LTEuMjUgMC0wLjA5NS0wLjAxMS0wLjE4Ny0wLjAzMS0wLjI3NmwwLjAwMiAwLjAwOGMtMC43NDYtMy4yMzItMi42NjctNS45MjMtNS4yNzktNy42NTZsLTAuMDQ2LTAuMDI5YzAuNTM0LTAuMTQxIDEuMTQ3LTAuMjIxIDEuNzc5LTAuMjIxIDMuNDc4IDAgNi4zODQgMi40NDQgNy4wOTYgNS43MDhsMC4wMDkgMC4wNDhjMC4xMjcgMC41NjUgMC42MjQgMC45ODIgMS4yMTkgMC45ODJoMGMwLjA5Ni0wIDAuMTg5LTAuMDExIDAuMjc4LTAuMDMxbC0wLjAwOCAwLjAwMmMwLjU2Ni0wLjEyNiAwLjk4Mi0wLjYyNCAwLjk4Mi0xLjIxOSAwLTAuMDk1LTAuMDExLTAuMTg4LTAuMDMxLTAuMjc3bDAuMDAyIDAuMDA4eiI+PC9wYXRoPiA8L2c+PC9zdmc+Cg==) - https://Nahida.dev/icons/user-group
+ * @see https://Nahida.dev/guide/react- Documentation
+ *
+ * @param {Object} props - Xaa icons props and any valid SVG attribute
+ * @returns {JSX.Element} JSX Element
+ *
+ */
+const UserGroup = createXaaIcon('user-group', __iconNode);
+
+export default UserGroup;

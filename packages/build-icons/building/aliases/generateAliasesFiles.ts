@@ -98,7 +98,7 @@ export default async function generateAliasesFiles({
           aliasImportFileExtension,
         );
         aliasPrefixesFileContent += getExportString(
-          `Lucide${componentName}`,
+          `Xaa${componentName}`,
           iconName,
           aliasImportFileExtension,
         );
@@ -165,7 +165,7 @@ export default async function generateAliasesFiles({
               );
 
               aliasPrefixesFileContent += getExportString(
-                `Lucide${componentNameAlias}`,
+                `Xaa${componentNameAlias}`,
                 exportFileIcon,
                 aliasImportFileExtension,
                 alias.deprecated,

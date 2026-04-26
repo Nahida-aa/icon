@@ -5,23 +5,23 @@ import {
 } from '@xaa/build-icons';
 import { createElement, forwardRef } from 'react';
 import Icon from './Icon';
-import type { IconNode, LucideProps } from './types';
+import type { IconNode, XaaProps } from './types';
 
 /**
- * Create a Lucide icon component
+ * Create a Xaa icon component
  * @param {string} iconName
  * @param {array} iconNode
- * @returns {ForwardRefExoticComponent} LucideIcon
+ * @returns {ForwardRefExoticComponent} XaaIcon
  */
-const createLucideIcon = (iconName: string, iconNode: IconNode) => {
-	const Component = forwardRef<SVGSVGElement, LucideProps>(
+const createXaaIcon = (iconName: string, iconNode: IconNode) => {
+	const Component = forwardRef<SVGSVGElement, XaaProps>(
 		({ className, ...props }, ref) =>
 			createElement(Icon, {
 				ref,
 				iconNode,
 				className: mergeClasses(
-					`lucide-${toKebabCase(toPascalCase(iconName))}`,
-					`lucide-${iconName}`,
+					`xaa-${toKebabCase(toPascalCase(iconName))}`,
+					`xaa-${iconName}`,
 					className,
 				),
 				...props,
@@ -33,4 +33,4 @@ const createLucideIcon = (iconName: string, iconNode: IconNode) => {
 	return Component;
 };
 
-export default createLucideIcon;
+export default createXaaIcon;

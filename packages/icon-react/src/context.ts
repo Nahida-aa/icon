@@ -7,9 +7,9 @@ import {
 	useContext,
 	useMemo,
 } from 'react';
-import type { LucideProps } from './types';
+import type { XaaProps } from './types';
 
-type LucideConfig = {
+type XaaConfig = {
 	size: number;
 	color: string;
 	strokeWidth: number;
@@ -17,20 +17,20 @@ type LucideConfig = {
 	className: string;
 };
 
-const LucideContext = createContext<LucideProps>({});
+const XaaContext = createContext<XaaProps>({});
 
-type LucideProviderProps = {
+type XaaProviderProps = {
 	children: ReactNode;
-} & Partial<LucideConfig>;
+} & Partial<XaaConfig>;
 
-export function LucideProvider({
+export function XaaProvider({
 	children,
 	size,
 	color,
 	strokeWidth,
 	absoluteStrokeWidth,
 	className,
-}: LucideProviderProps) {
+}: XaaProviderProps) {
 	const value = useMemo(
 		() => ({
 			size,
@@ -42,7 +42,7 @@ export function LucideProvider({
 		[size, color, strokeWidth, absoluteStrokeWidth, className],
 	);
 
-	return createElement(LucideContext.Provider, { value }, children);
+	return createElement(XaaContext.Provider, { value }, children);
 }
 
-export const useLucideContext = () => useContext(LucideContext);
+export const useXaaContext = () => useContext(XaaContext);

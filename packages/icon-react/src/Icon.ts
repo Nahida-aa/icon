@@ -2,16 +2,16 @@
 
 import { hasA11yProp, mergeClasses } from '@xaa/build-icons';
 import { createElement, forwardRef } from 'react';
-import { useLucideContext } from './context';
+import { useXaaContext } from './context';
 import defaultAttributes from './defaultAttributes';
-import type { IconNode, LucideProps } from './types';
+import type { IconNode, XaaProps } from './types';
 
-interface IconComponentProps extends LucideProps {
+interface IconComponentProps extends XaaProps {
 	iconNode: IconNode;
 }
 
 /**
- * Lucide icon component
+ * Xaa icon component
  *
  * @component Icon
  * @param {object} props
@@ -23,7 +23,7 @@ interface IconComponentProps extends LucideProps {
  * @param {IconNode} props.children - The children of the icon
  * @param {IconNode} props.iconNode - The icon node of the icon
  *
- * @returns {ForwardRefExoticComponent} LucideIcon
+ * @returns {ForwardRefExoticComponent} XaaIcon
  */
 const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 	(
@@ -45,7 +45,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 			absoluteStrokeWidth: contextAbsoluteStrokeWidth = false,
 			color: contextColor = 'currentColor',
 			className: contextClass = '',
-		} = useLucideContext() ?? {};
+		} = useXaaContext() ?? {};
 
 		const calculatedStrokeWidth =
 			(absoluteStrokeWidth ?? contextAbsoluteStrokeWidth)
@@ -62,7 +62,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 				height: size ?? contextSize ?? defaultAttributes.height,
 				stroke: color ?? contextColor,
 				strokeWidth: calculatedStrokeWidth,
-				className: mergeClasses('lucide', contextClass, className),
+				className: mergeClasses('xaa', contextClass, className),
 				...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
 				...rest,
 			},
