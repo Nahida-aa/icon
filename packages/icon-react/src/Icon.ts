@@ -5,7 +5,6 @@ import { hasA11yProp } from '@xaa/build-icons/utils/hasA11yProp';
 import { mergeClasses } from '@xaa/build-icons/utils/mergeClasses';
 import { createElement, forwardRef } from 'react';
 import { useXaaContext } from './context';
-import defaultAttributes from './defaultAttributes';
 import type { IconNode, XaaIconDefaultProps, XaaProps } from './types';
 
 interface IconComponentProps extends XaaProps {
@@ -15,18 +14,17 @@ interface IconComponentProps extends XaaProps {
 const htmlPropsToReactProps = (
 	htmlProps?: XaaIconDefaultHtmlProps,
 ): XaaIconDefaultProps => ({
-	xmlns: htmlProps?.xmlns ?? defaultAttributes.xmlns,
-	width: htmlProps?.width ?? defaultAttributes.width,
-	height: htmlProps?.height ?? defaultAttributes.height,
-	viewBox: htmlProps?.viewBox ?? defaultAttributes.viewBox,
+	xmlns: htmlProps?.xmlns ?? 'http://www.w3.org/2000/svg',
+	width: htmlProps?.width ?? 24,
+	height: htmlProps?.height ?? 24,
+	viewBox: htmlProps?.viewBox ?? '0 0 24 24',
 	fill: htmlProps?.fill,
 	stroke: htmlProps?.stroke,
 	strokeWidth: htmlProps?.['stroke-width']
 		? Number(htmlProps?.['stroke-width'])
 		: undefined,
 	strokeLinecap:
-		(htmlProps?.['stroke-linecap'] as XaaIconDefaultProps['strokeLinecap']) ??
-		defaultAttributes.strokeLinecap,
+		(htmlProps?.['stroke-linecap'] as XaaIconDefaultProps['strokeLinecap']),
 	strokeLinejoin:
 		(htmlProps?.['stroke-linejoin'] as XaaIconDefaultProps['strokeLinejoin']),
 });
@@ -84,7 +82,7 @@ const Icon = forwardRef<SVGSVGElement, IconComponentProps>(
 				height: size ?? contextSize ?? defaults.height,
 				stroke: color ?? contextColor ?? defaults.stroke,
 				strokeWidth: calculatedStrokeWidth ?? defaults.strokeWidth,
-				className: mergeClasses('lucide', contextClass, className),
+				className: mergeClasses('xaa', contextClass, className),
 				...(!children && !hasA11yProp(rest) && { 'aria-hidden': 'true' }),
 				...rest,
 			},

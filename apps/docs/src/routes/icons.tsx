@@ -6,10 +6,13 @@ import {
 	LayoutBottomBarFilledIcon,
 	LayoutBottomBarIcon,
 	UserGroupIcon,
+	XaaAnthropic,
 	XaaBot,
 	XaaBox,
 	XaaGithub,
+	XaaGoogle,
 	XaaHome,
+	XaaLoader,
 	XaaMix,
 	XaaShieldLock,
 	XaaSparkles,
@@ -43,6 +46,9 @@ function RouteComponent() {
 			<XaaShieldLock />
 			<XaaBot />
 			<XaaUser />
+			<XaaGoogle />
+			<XaaAnthropic />
+			<XaaLoader />
 		</div>
 	);
 }
