@@ -30,11 +30,10 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/v}
           bun scripts/sync-version.mts -- $VERSION
 
-      # 5. 构建所有包
+      # 5. 构建
       - name: Build
         run: |
-          cd packages/icon-react
-          bun run build # 或者使用 turbo: bun x turbo build
+          bun run --filter @xaa/icon-react build
 
       # 6. 发布到 NPM 
       # Bun 会自动处理 workspace:* 协议
