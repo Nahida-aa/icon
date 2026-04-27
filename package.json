@@ -17,6 +17,7 @@
     "solid-js": "latest",
     "vite-plugin-solid": "latest",
     "@biomejs/biome": "latest",
+    "tsdown": "latest",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "@types/react": "^19.2.0",
