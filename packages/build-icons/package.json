@@ -1,9 +1,11 @@
 {
   "name": "@xaa/build-icons",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
+  "main": "./index.ts",
+  "types": "./types.ts",
   "exports": {
-".": {
+    ".": {
       "import": "./index.ts",
       "require": "./index.ts"
     },
@@ -40,8 +42,8 @@
     "typescript": "catalog:",
     "@typescript/native-preview": "catalog:"
   },
-    "license": "ISC",
-      "publishConfig": {
+  "license": "ISC",
+  "publishConfig": {
     "access": "public"
   },
   "private": false
