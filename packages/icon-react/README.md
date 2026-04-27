@@ -5,9 +5,11 @@ React SVG icon components built with [build-icons](https://github.com/Nahida-aa/
 ## Installation
 
 ```bash
-bun add @xaa/icon-react react
+bun add @xaa/icon-react
 # or
-npm install @xaa/icon-react react
+pnpm add @xaa/icon-react
+# or
+npm install @xaa/icon-react
 ```
 
 ## Usage

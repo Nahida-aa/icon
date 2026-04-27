@@ -1,5 +1,6 @@
 {
   "name": "@xaa/build-icons",
+  "version": "0.0.6",
   "type": "module",
   "exports": {
 ".": {
@@ -38,5 +39,10 @@
     "@types/node": "catalog:",
     "typescript": "catalog:",
     "@typescript/native-preview": "catalog:"
-  }
+  },
+    "license": "ISC",
+      "publishConfig": {
+    "access": "public"
+  },
+  "private": false
 }
