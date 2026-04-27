@@ -28,7 +28,7 @@ jobs:
         run: |
           # 从 v1.2.3 中提取 1.2.3
           VERSION=${GITHUB_REF#refs/tags/v}
-          bun scripts/sync-version.m.ts -- $VERSION
+          bun scripts/sync-version.mts -- $VERSION
 
       # 5. 构建所有包
       - name: Build
