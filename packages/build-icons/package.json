@@ -31,7 +31,7 @@
     "start": "bun ./cli.ts"
   },
   "bin": {
-    "build-icons": "bun ./cli.ts"
+    "build-icons": "./cli.ts"
   },
   "dependencies": {
     "prettier": "^3.8.3",
