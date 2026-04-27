@@ -1,15 +1,15 @@
 {
   "name": "@xaa/icon-react",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "description": "React SVG icon components",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "typecheck": "tsgo --noEmit",
-    "build": "tsdown",
+    "build": "bun run build:icons && tsdown",
     "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --withDynamicImports --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts"
   },
   "devDependencies": {

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["bun"], // 核心：告诉 TS 这是一个 Bun 环境
+    "allowImportingTsExtensions": true,
+    "noEmit": true,   // 脚本文件不需要 TS 编译输出，直接用 bun 跑
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["scripts/**/*.ts", "scripts/**/*.mts"] // 只让这个配置负责你的脚本文件夹
+}
