@@ -32,7 +32,9 @@ jobs:
 
       # 5. 构建所有包
       - name: Build
-        run: bun run build # 或者使用 turbo: bun x turbo build
+        run: |
+          cd packages/icon-react
+          bun run build # 或者使用 turbo: bun x turbo build
 
       # 6. 发布到 NPM 
       # Bun 会自动处理 workspace:* 协议
