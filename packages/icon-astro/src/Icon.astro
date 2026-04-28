@@ -3,9 +3,9 @@ import type { IconProps as Props } from './types';
 import { hasA11yProp } from './utils/hasA11yProp';
 
 const {
-	color = 'currentColor',
+	color,
 	size = 24,
-	'stroke-width': strokeWidth = 2,
+	'stroke-width': strokeWidth,
 	absoluteStrokeWidth = false,
 	iconNode = [],
 	class: className,
@@ -22,7 +22,7 @@ const {
     ...(!hasA11yProp(rest) && { 'aria-hidden': 'true' }),
     ...rest,
   }}
-  class:list={['lucide', className]}
+  class:list={['xaa', className]}
 >
   {iconNode.map(([Tag, attrs]) => <Tag {...attrs} />)}
   <slot />

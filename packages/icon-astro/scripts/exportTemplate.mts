@@ -1,5 +1,5 @@
 import { base64SVG } from '@xaa/build-icons/utils/base64SVG';
-import defineExportTemplate from '@xaa/build-icons/utils/defineExportTemplate';
+import {defineExportTemplate} from '@xaa/build-icons/utils/defineExportTemplate';
 
 export default defineExportTemplate(async ({
   componentName,
@@ -29,7 +29,7 @@ import type { AstroComponent } from '../types'
 
 /**
  * @component @name ${componentName}
- * @description Lucide SVG icon component, renders SVG Element with children.
+ * @description Xaa SVG icon component, renders SVG Element with children.
  *
  * @preview ![img](data:image/svg+xml;base64,${svgBase64}) - https://icon.nahida-aa.workers.dev/icons/${iconName}
  * @see https://icon.nahida-aa.workers.dev/guide/astro - Documentation

@@ -88,7 +88,8 @@ export default  function generateIconFiles({
           singleQuote: true,
           trailingComma: 'all',
           printWidth: 100,
-          parser: iconFileExtension.endsWith('.ts') ? 'babel-ts' : 'babel',
+          parser: iconFileExtension.endsWith('.tsx') ? 'typescript' : 
+        iconFileExtension.endsWith('.ts') ? 'babel-ts' : 'babel',
         })
       : elementTemplate;
 

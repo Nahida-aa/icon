@@ -24,7 +24,7 @@ export default (
 				Icon,
 				{
 					class: mergeClasses(
-						Boolean(iconName) && `lucide-${toKebabCase(iconName)}`,
+						Boolean(iconName) && `xaa-${toKebabCase(iconName)}`,
 						Boolean(className) && className,
 					),
 					iconNode,

@@ -1,38 +1,40 @@
 import { base64SVG } from '@xaa/build-icons/utils/base64SVG';
-import {defineExportTemplate} from '@xaa/build-icons/utils/defineExportTemplate';
+import {defineExportTemplate, ExportTemplateParams} from '@xaa/build-icons/utils/defineExportTemplate';
 
 export default defineExportTemplate(async ({
-	componentName,
-	iconName,
-	children,
-	getSvg,
-	deprecated,
-	deprecationReason,
-	iconData,
+  componentName,
+  iconName,
+  children,
+  getSvg,
+  deprecated,
+  deprecationReason,
+  iconData
 }) => {
-	const svgContents = await getSvg();
-	const svgBase64 = base64SVG(svgContents);
+  const svgContents = await getSvg();
+  const svgBase64 = base64SVG(svgContents);
 	const { defaults } = iconData;
 	const defaultsArg = defaults ? JSON.stringify(defaults) : 'undefined';
 
-	return `
-import createXaaIcon from '../createXaaIcon';
-import type { IconNode } from '../types';
+  return `
+import Icon from '../Icon';
+import type { IconNode, LucideProps } from '../types';
 
-export const __iconNode: IconNode = ${JSON.stringify(children)}
+const iconNode: IconNode = ${JSON.stringify(children)};
 
 /**
  * @component @name ${componentName}
  * @description Xaa SVG icon component, renders SVG Element with children.
  *
  * @preview ![img](data:image/svg+xml;base64,${svgBase64}) - https://icon.nahida-aa.workers.dev/icons/${iconName}
- * @see https://icon.nahida-aa.workers.dev/guide/react- Documentation
+ * @see https://icon.nahida-aa.workers.dev/guide/solid - Documentation
  *
  * @param {Object} props - Xaa icons props and any valid SVG attribute
  * @returns {JSX.Element} JSX Element
  * ${deprecated ? `@deprecated ${deprecationReason}` : ''}
  */
-const ${componentName} = createXaaIcon('${iconName}', __iconNode,${defaultsArg});
+const ${componentName} = (props: LucideProps) => (
+  <Icon {...${defaultsArg}} {...props} iconNode={iconNode} name="${iconName}" />
+)
 
 export default ${componentName};
 `;

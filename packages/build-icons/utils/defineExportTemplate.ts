@@ -1,6 +1,6 @@
 import type { XaaIconDefaultHtmlProps } from '../types';
 
-interface ExportTemplateParams {
+export interface ExportTemplateParams {
   componentName: string;
   iconName: string;
   children: any;
@@ -11,6 +11,4 @@ interface ExportTemplateParams {
   defaults?: XaaIconDefaultHtmlProps;
 }
 
-const defineExportTemplate = (exportFunction: (params: ExportTemplateParams) => Promise<string>) => exportFunction;
-
-export default defineExportTemplate;
+export const defineExportTemplate = (exportFunction: (params: ExportTemplateParams) => Promise<string>) => exportFunction;

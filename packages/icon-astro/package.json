@@ -10,8 +10,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nahida-aa/icon.git",
-    "directory": "packages/icon-astro"
+    "url": "https://github.com/Nahida-aa/icon.git"
   },
   "keywords": [
     "Xaa",
@@ -29,10 +28,10 @@
   ],
   "exports": {
     ".": {
-      "import": "./src/lucide-astro.ts"
+      "import": "./src/index.ts"
     },
     "./icons": {
-      "import": "./src/lucide-astro.ts"
+      "import": "./src/index.ts"
     },
     "./icons/*": {
       "import": "./src/icons/*.ts"
@@ -40,9 +39,9 @@
   },
   "scripts": {
     "astro-check": "astro check",
-    "build": "copy:utils && build:icons",
-    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts --pretty=false",
     "copy:utils": "mkdir -p ./src/utils && for f in hasA11yProp toKebabCase mergeClasses; do cp -f ../../packages/build-icons/utils/$f.ts ./src/utils/; done",
+    "build": "bun run copy:utils && bun run build:icons",
+    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts --pretty=false",
     "clean": "rm -rf dist && rm -rf stats && rm -rf ./src/icons/*.ts",
     "copy:license": "cp ../../LICENSE ./LICENSE"
   },
@@ -52,7 +51,6 @@
     "linkedom": "^0.18.5",
     "prettier": "^3.4.2",
    "typescript": "catalog:",
-        "@typescript/native-preview": "catalog:",
     "vite": "catalog:",
     "@astrojs/check": "latest",
     "vitest": "^4.1.1",
