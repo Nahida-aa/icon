@@ -34,6 +34,8 @@ jobs:
       - name: Build
         run: |
           bun run --filter @xaa/icon-react build
+          bun run --filter @xaa/icon-solid build
+          bun run --filter @xaa/icon-astro build
 
       # 6. 发布到 NPM 
       # Bun 会自动处理 workspace:* 协议
