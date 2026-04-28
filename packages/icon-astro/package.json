@@ -40,8 +40,8 @@
   "scripts": {
     "astro-check": "astro check",
     "copy:utils": "mkdir -p ./src/utils && for f in hasA11yProp toKebabCase mergeClasses; do cp -f ../../packages/build-icons/utils/$f.ts ./src/utils/; done",
-    "build": "bun run copy:utils && bun run build:icons",
-    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts --pretty=false",
+    "build": "bun  copy:utils && bun  build:icons",
+    "build:icons": "bun ./../build-icons/cli.ts --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --aliasesFileExtension=.ts --iconFileExtension=.ts --exportFileName=index.ts --pretty=false",
     "clean": "rm -rf dist && rm -rf stats && rm -rf ./src/icons/*.ts",
     "copy:license": "cp ../../LICENSE ./LICENSE"
   },

@@ -61,7 +61,7 @@
     "copy:license": "cp ../../LICENSE ./LICENSE",
     "clean": "rm -rf dist && rm -rf stats",
     "build:transpile": "tsgo --jsx preserve -t es2020 --rootDir src --outDir dist --noEmit false",
-    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.tsx --exportFileName=index.ts",
+    "build:icons": "bun ./../build-icons/cli.ts --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.tsx --exportFileName=index.ts",
     "test": "bun run build:icons && vitest run",
     "version": "bun version --git-tag-version=false"
   },
