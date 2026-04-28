@@ -1,0 +1,67 @@
+{
+  "name": "docs-react",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "typecheck": "tsgo --noEmit",
+    "dev": "vite dev ",
+    "build": "vite build",
+    "deploy": "bun run build && wrangler deploy",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "format": "biome format",
+    "lint": "biome lint",
+    "check": "biome check"
+  },
+  "dependencies": {
+    "@cloudflare/vite-plugin": "^1.33.2",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@tabler/icons-react": "^3.41.1",
+    "@tailwindcss/vite": "catalog:",
+    "@tanstack/react-devtools": "latest",
+    "@tanstack/react-router": "latest",
+    "@tanstack/react-router-devtools": "latest",
+    "@tanstack/react-router-ssr-query": "latest",
+    "@tanstack/react-start": "latest",
+    "@tanstack/router-plugin": "^1.132.0",
+    "@xaa/icon-react": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "latest",
+    "nitro": "^3.0.260415-beta",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "^1.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@inlang/paraglide-js": "^2.13.1",
+    "@xaa/build-icons": "workspace:*",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/devtools-vite": "latest",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "^6.0.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "jsdom": "^29",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "latest",
+    "wrangler": "latest"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss"
+    ]
+  }
+}
