@@ -3,7 +3,7 @@
   "description": "A Xaa icon library package for Solid applications.",
   "version": "0.0.1",
   "license": "ISC",
-    "publishConfig": {
+  "publishConfig": {
     "access": "public"
   },
   "repository": {
@@ -23,15 +23,15 @@
     "Font Awesome"
   ],
   "author": "Eric Fennis",
-  "source": "src/index.ts",
-  "main": "dist/cjs/index.js",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
-    ".": {
+        ".": {
       "types": "./dist/types/index.d.ts",
       "solid": "./dist/source/index.jsx",
       "import": "./dist/esm/index.mjs",
@@ -56,26 +56,34 @@
   "sideEffects": false,
   "scripts": {
     "typecheck": "tsgo --noEmit",
-    "build": "bun run build:icons && tsdown",
+    "build": "bun build:icons && bun build:bundle",
+    "build:bundle": "rollup -c rollup.config.mjs",
     "copy:license": "cp ../../LICENSE ./LICENSE",
-    "clean": "rm -rf dist && rm -rf stats && rm -rf ./src/icons/*.ts",
+    "clean": "rm -rf dist && rm -rf stats",
     "build:transpile": "tsgo --jsx preserve -t es2020 --rootDir src --outDir dist --noEmit false",
     "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --renderUniqueKey --withAliases --separateAliasesFile --separateAliasesFileIgnore=fingerprint --aliasesFileExtension=.ts --iconFileExtension=.tsx --exportFileName=index.ts",
     "test": "bun run build:icons && vitest run",
     "version": "bun version --git-tag-version=false"
   },
   "devDependencies": {
-    "@babel/core": "latest",
+    "@babel/core": "^7.29.0",
     "@babel/preset-env": "latest",
-    "@babel/preset-typescript": "latest",
-    "@xaa/build-icons": "workspace:*",
+    "@babel/preset-typescript": "^7.28.5",
+    "@rollup/plugin-babel": "^7.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@solidjs/testing-library": "latest",
     "@testing-library/jest-dom": "latest",
-    "babel-preset-solid": "latest",
+    "@typescript/native-preview": "catalog:",
+    "@xaa/build-icons": "workspace:*",
+    "@xaa/shared": "workspace:*",
+    "@xaa/rollup-plugins": "workspace:*",
+    "babel-preset-solid": "^1.9.12",
+    "esbuild": "^0.28.0",
     "jest-serializer-html": "latest",
+    "rollup": "^4.60.2",
+    "rollup-plugin-license": "^3.7.1",
     "solid-js": "latest",
-    "typescript": "latest",
-    "tsdown": "catalog:",
+    "typescript": "^6.0.3",
     "vite": "latest",
     "vite-plugin-solid": "latest"
   },

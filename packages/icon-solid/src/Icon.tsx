@@ -34,18 +34,19 @@ const Icon = (props: LucideProps & IconProps) => {
 			stroke-width={
 				(localProps.absoluteStrokeWidth ?? globalProps.absoluteStrokeWidth) ===
 				true
-					? (Number(localProps.strokeWidth ?? globalProps.strokeWidth) * 24) /
+					? (Number(localProps.strokeWidth ?? globalProps.strokeWidth ?? 1) *
+							24) /
 						Number(localProps.size ?? globalProps.size)
-					: Number(localProps.strokeWidth ?? globalProps.strokeWidth)
+					: Number(localProps.strokeWidth ?? globalProps.strokeWidth ?? 1)
 			}
 			class={mergeClasses(
-				'lucide',
-				'lucide-icon',
+				'xaa',
+				'xaa-icon',
 				globalProps.class,
 				...(localProps.name != null
 					? [
-							`lucide-${toKebabCase(toPascalCase(localProps.name))}`,
-							`lucide-${toKebabCase(localProps.name)}`,
+							`xaa-${toKebabCase(toPascalCase(localProps.name))}`,
+							`xaa-${toKebabCase(localProps.name)}`,
 						]
 					: []),
 				localProps.class,
