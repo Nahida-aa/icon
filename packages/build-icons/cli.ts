@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 console.log('=== CLI STARTED ===');
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { readSvgDirectory } from "./helpers/readSvgDirectory";
 import renderIconsObject from './render/renderIconsObject.ts';
 import generateIconFiles from './building/generateIconFiles.ts';
